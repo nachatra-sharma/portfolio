@@ -12,7 +12,7 @@ export function Header() {
           Building bridges between design and code
         </h2>
         <p className="relative z-10 mx-auto mt-4 max-w-xl text-center text-neutral-800 dark:text-neutral-500">
-          I'm Nachatra Sharma, a design engineer at PRNK Info Tech, where I
+          I&apos;m Nachatra Sharma, a design engineer at PRNK Info Tech, where I
           craft intuitive user experiences. After hours, I build my own
           projects.
         </p>
