@@ -1,6 +1,5 @@
 import AboutComponent from "@/components/custom/about/AboutComponent";
 import { NavbarComponent } from "@/components/custom/Navbar";
-import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
 
 export default function About() {
   return (
