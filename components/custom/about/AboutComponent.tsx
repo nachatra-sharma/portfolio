@@ -1,7 +1,14 @@
 import UserInfo from "./UserInfo";
 import SocialMedia from "./SocialMedia";
 import Experience from "./Experience";
-
+import Image from "next/image";
+import { CometCard } from "@/components/ui/comet-card";
+import {
+  backendSkills,
+  designSkills,
+  frontendSkills,
+  toolsSkills,
+} from "@/constant/skills";
 export default function AboutComponent() {
   return (
     <div className="relative z-10 flex flex-row justify-center gap-10">
@@ -29,9 +36,87 @@ export default function AboutComponent() {
         {/* Technical Skills */}
         <div className="mb-10">
           <h2 className="text-3xl tracking-wide font-bold text-[#ccd6f6] mb-10">
-            Technical Skills
+            FrontEnd Skills
           </h2>
-          <div className="flex justify-between flex-wrap"></div>
+          <div className="grid grid-cols-5 gap-x-5 gap-y-5">
+            {frontendSkills.map((skill) => (
+              <CometCard key={skill.id}>
+                <Image
+                  src={skill.image}
+                  alt={skill.alt}
+                  width={70}
+                  height={70}
+                  className="mx-auto"
+                />
+                <h3 className="text-sm font-extrabold tracking-wide py-3 text-center">
+                  {skill.text}
+                </h3>
+              </CometCard>
+            ))}
+          </div>
+        </div>
+        <div className="mb-10">
+          <h2 className="text-3xl tracking-wide font-bold text-[#ccd6f6] mb-10">
+            BackEnd Skills
+          </h2>
+          <div className="grid grid-cols-5 gap-x-5 gap-y-5">
+            {backendSkills.map((skill) => (
+              <CometCard key={skill.id}>
+                <Image
+                  src={skill.image}
+                  alt={skill.alt}
+                  width={70}
+                  height={70}
+                  className="mx-auto"
+                />
+                <h3 className="text-sm font-extrabold tracking-wide py-3 text-center">
+                  {skill.text}
+                </h3>
+              </CometCard>
+            ))}
+          </div>
+        </div>
+        <div className="mb-10">
+          <h2 className="text-3xl tracking-wide font-bold text-[#ccd6f6] mb-10">
+            Tools Skills
+          </h2>
+          <div className="grid grid-cols-5 gap-x-5 gap-y-5">
+            {toolsSkills.map((skill) => (
+              <CometCard key={skill.id}>
+                <Image
+                  src={skill.image}
+                  alt={skill.alt}
+                  width={70}
+                  height={70}
+                  className="mx-auto"
+                />
+                <h3 className="text-sm font-extrabold tracking-wide py-3 text-center">
+                  {skill.text}
+                </h3>
+              </CometCard>
+            ))}
+          </div>
+        </div>
+        <div className="mb-10">
+          <h2 className="text-3xl tracking-wide font-bold text-[#ccd6f6] mb-10">
+            Design Skills
+          </h2>
+          <div className="grid grid-cols-5 gap-x-5 gap-y-5">
+            {designSkills.map((skill) => (
+              <CometCard key={skill.id}>
+                <Image
+                  src={skill.image}
+                  alt={skill.alt}
+                  width={70}
+                  height={70}
+                  className="mx-auto"
+                />
+                <h3 className="text-sm font-extrabold tracking-wide py-3 text-center">
+                  {skill.text}
+                </h3>
+              </CometCard>
+            ))}
+          </div>
         </div>
       </div>
     </div>

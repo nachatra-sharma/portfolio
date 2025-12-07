@@ -14,8 +14,8 @@ export default function UserInfo() {
         className="rounded-full"
       />
       <div className="flex flex-row gap-2 items-center">
-        <Earth className="w-4 h-4" />
-        <p className="text-xs font-semibold tracking-wide">Aisa/India</p>
+        <span className="text-3xl">🇮🇳</span>
+        <p className="text-sm font-semibold tracking-wide">Aisa/India</p>
       </div>
       <div className="flex flex-row gap-2">
         <LanguageBadge text="English" />
