@@ -14,19 +14,31 @@ export default function Footer() {
         © {new Date().getFullYear()} Nachatra Sharma • All Rights Reserved
       </p>
       <div className="flex flex-row gap-6">
-        <LinkPreview url="https://github.com/nachatra-sharma/">
+        <LinkPreview
+          text="GitHub Profile"
+          url="https://github.com/nachatra-sharma/"
+        >
           <IconBrandGithub />
         </LinkPreview>
-        <LinkPreview url="https://www.linkedin.com/in/sharma-nachatra/">
+        <LinkPreview
+          text="Linkedin Profile"
+          url="https://www.linkedin.com/in/sharma-nachatra/"
+        >
           <IconBrandLinkedin />
         </LinkPreview>
-        <LinkPreview url="https://medium.com/@sharmanachatra">
+        <LinkPreview
+          text="Medium Profile"
+          url="https://medium.com/@sharmanachatra"
+        >
           <IconBrandMedium />
         </LinkPreview>
-        <LinkPreview url="https://x.com/nachatrasharma">
+        <LinkPreview text="Twitter Profile" url="https://x.com/nachatrasharma">
           <IconBrandTwitter />
         </LinkPreview>
-        <LinkPreview url="https://www.instagram.com/nachatra.sharma/">
+        <LinkPreview
+          text="Instagram Profile"
+          url="https://www.instagram.com/nachatra.sharma/"
+        >
           <IconBrandInstagram />
         </LinkPreview>
       </div>

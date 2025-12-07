@@ -20,6 +20,7 @@ type LinkPreviewProps = {
   height?: number;
   quality?: number;
   layout?: string;
+  text?: string;
 } & (
   | { isStatic: true; imageSrc: string }
   | { isStatic?: false; imageSrc?: never }
@@ -35,6 +36,7 @@ export const LinkPreview = ({
   layout = "fixed",
   isStatic = false,
   imageSrc = "",
+  text,
 }: LinkPreviewProps) => {
   let src;
   if (!isStatic) {
@@ -94,7 +96,7 @@ export const LinkPreview = ({
           className={cn("text-black dark:text-white", className)}
           asChild
         >
-          <a href={url} target="_blank" rel="noreferrer">
+          <a href={url} target="_blank" aria-label={text} rel="noreferrer">
             {children}
           </a>
         </HoverCardPrimitive.Trigger>
