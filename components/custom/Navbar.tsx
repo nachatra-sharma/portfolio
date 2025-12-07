@@ -18,7 +18,7 @@ export function NavbarComponent() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div className={`w-full ${top ? "" : "h-16 fixed z-999 backdrop-blur-lg"}`}>
+    <div className={`w-full ${top ? "" : "h-16 fixed z-20 backdrop-blur-lg"}`}>
       <Navbar className="top-0 my-2" />
     </div>
   );
