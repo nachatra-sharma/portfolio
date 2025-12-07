@@ -1,4 +1,3 @@
-import { Earth } from "lucide-react";
 import Image from "next/image";
 import User from "@/public/profile.jpeg";
 import LanguageBadge from "./LanguageBadge";
