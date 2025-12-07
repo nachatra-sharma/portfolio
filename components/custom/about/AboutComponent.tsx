@@ -1,3 +1,4 @@
+"use client";
 import UserInfo from "./UserInfo";
 import SocialMedia from "./SocialMedia";
 import Experience from "./Experience";
@@ -9,7 +10,24 @@ import {
   frontendSkills,
   toolsSkills,
 } from "@/constant/skills";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+
 export default function AboutComponent() {
+  const { theme, systemTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+  const isDark =
+    theme === "dark" || (theme === "system" && systemTheme === "dark");
+
   return (
     <div className="relative z-10 flex flex-row justify-center gap-10">
       <div className="w-1/4"></div>
@@ -18,87 +36,101 @@ export default function AboutComponent() {
         <h1 className="text-5xl font-extrabold tracking-wide">
           Nachatra Sharma
         </h1>
-        <h2 className="text-3xl tracking-wide font-bold text-[#ccd6f6]">
+        <h2 className="text-3xl tracking-wide font-bold">
           Full Stack Developer
         </h2>
         <SocialMedia />
-        <p className="leading-8 tracking-wide text-[#8892b0]">
-          Selene is a Jakarta-based design engineer with a passion for
-          transforming complex challenges into simple, elegant design solutions.
-          Her work spans digital interfaces, interactive experiences, and the
-          convergence of design and technology.
+        <p className="leading-8 tracking-wide">
+          I started my journey in 2023, and today I&apos;m growing as a
+          full-stack developer who loves crafting websites that speak true
+          engineering. What excites me the most is building apps, solving logic
+          problems, creating clean UI and learning new technologies.
         </p>
+        <p className="leading-8 tracking-wide">
+          My strengths include JavaScript, TypeScript, modern JavaScript
+          frameworks such as Next.js, React.js and React Native, along with a
+          mindset focused on learning, experimentation, and improvement.
+        </p>
+        <p className="leading-8 tracking-wide">
+          I&apos;m currently working at PRNK Info Tech. Beyond tech, I enjoy
+          travelling, playing football & chess, which helps me stay creative and
+          balanced. Looking forward to meeting people who share similar
+          interests, opportunities, and ideas.
+        </p>
+        <hr />
         {/* Experience */}
-        <h2 className="text-3xl tracking-wide font-bold text-[#ccd6f6]">
-          Work Experience
-        </h2>
+        <h2 className="text-3xl tracking-wide font-bold">Work Experience</h2>
         <Experience />
+        <hr />
         {/* Technical Skills */}
         <div className="mb-10">
-          <h2 className="text-3xl tracking-wide font-bold text-[#ccd6f6] mb-10">
-            FrontEnd Skills
+          <h2 className="text-3xl tracking-wide font-bold mb-10">
+            Frontend Skills
           </h2>
           <div className="grid grid-cols-5 gap-x-5 gap-y-5">
             {frontendSkills.map((skill) => (
               <CometCard key={skill.id}>
                 <Image
-                  src={skill.image}
+                  src={isDark ? skill.image : skill.imageLight}
                   alt={skill.alt}
                   width={70}
                   height={70}
                   className="mx-auto"
                 />
-                <h3 className="text-sm font-extrabold tracking-wide py-3 text-center">
+                <h3 className="text-xs font-extrabold tracking-wide pt-3 text-center">
                   {skill.text}
                 </h3>
               </CometCard>
             ))}
           </div>
         </div>
+        <hr />
         <div className="mb-10">
-          <h2 className="text-3xl tracking-wide font-bold text-[#ccd6f6] mb-10">
-            BackEnd Skills
+          <h2 className="text-3xl tracking-wide font-bold mb-10">
+            Backend Skills
           </h2>
           <div className="grid grid-cols-5 gap-x-5 gap-y-5">
             {backendSkills.map((skill) => (
               <CometCard key={skill.id}>
                 <Image
-                  src={skill.image}
+                  src={isDark ? skill.darkImage : skill.image}
                   alt={skill.alt}
                   width={70}
                   height={70}
                   className="mx-auto"
                 />
-                <h3 className="text-sm font-extrabold tracking-wide py-3 text-center">
+                <h3 className="text-xs font-extrabold tracking-wide pt-3 text-center">
                   {skill.text}
                 </h3>
               </CometCard>
             ))}
           </div>
         </div>
+        <hr />
         <div className="mb-10">
-          <h2 className="text-3xl tracking-wide font-bold text-[#ccd6f6] mb-10">
+          <h2 className="text-3xl tracking-wide font-bold mb-10">
             Tools Skills
           </h2>
           <div className="grid grid-cols-5 gap-x-5 gap-y-5">
             {toolsSkills.map((skill) => (
               <CometCard key={skill.id}>
                 <Image
-                  src={skill.image}
+                  src={isDark ? skill.image : skill.imageLight}
                   alt={skill.alt}
                   width={70}
                   height={70}
                   className="mx-auto"
                 />
-                <h3 className="text-sm font-extrabold tracking-wide py-3 text-center">
+                <h3 className="text-xs font-extrabold tracking-wide pt-3 text-center">
                   {skill.text}
                 </h3>
               </CometCard>
             ))}
           </div>
         </div>
+        <hr />
         <div className="mb-10">
-          <h2 className="text-3xl tracking-wide font-bold text-[#ccd6f6] mb-10">
+          <h2 className="text-3xl tracking-wide font-bold mb-10">
             Design Skills
           </h2>
           <div className="grid grid-cols-5 gap-x-5 gap-y-5">
@@ -111,7 +143,7 @@ export default function AboutComponent() {
                   height={70}
                   className="mx-auto"
                 />
-                <h3 className="text-sm font-extrabold tracking-wide py-3 text-center">
+                <h3 className="text-xs font-extrabold tracking-wide pt-3 text-center">
                   {skill.text}
                 </h3>
               </CometCard>
