@@ -40,7 +40,7 @@ function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed top-10 inset-x-0 max-w-[600px] mx-auto z-50",
+        "fixed top-10 inset-x-0 max-w-[340px] sm:max-w-[600px] mx-auto z-50",
         className
       )}
     >
@@ -62,7 +62,7 @@ function Navbar({ className }: { className?: string }) {
             <div
               className={`${
                 currentRoute === href && "text-[#e5e5e4]"
-              } flex flex-row gap-2 items-center px-2 py-1 relative z-10`}
+              } flex flex-row sm:gap-2 max-w-[340px] itemssm:-center px-2 py-1 relative z-10`}
             >
               <Icon className="w-4 h-4" />
               <MenuItem setActive={setActive} active={active} item={label} />
