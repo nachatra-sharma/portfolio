@@ -1,5 +1,4 @@
 "use client";
-import UserInfo from "./UserInfo";
 import SocialMedia from "./SocialMedia";
 import Experience from "./Experience";
 import Image from "next/image";
@@ -12,7 +11,7 @@ import {
 } from "@/constant/skills";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-
+import User from "@/public/profile.jpeg";
 export default function AboutComponent() {
   const { theme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -30,16 +29,25 @@ export default function AboutComponent() {
 
   return (
     <div className="relative z-10 flex flex-row justify-center gap-10">
-      <div className="w-1/4"></div>
-      <UserInfo />
-      <div className="flex flex-col gap-5 w-1/2">
-        <h1 className="text-5xl font-extrabold tracking-wide">
-          Nachatra Sharma
-        </h1>
-        <h2 className="text-3xl tracking-wide font-bold">
-          Full Stack Developer
-        </h2>
-        <SocialMedia />
+      <div className="flex flex-col gap-5">
+        <div className="flex flex-row items-center justify-between">
+          <div className="flex flex-col gap-5">
+            <h1 className="text-5xl font-extrabold tracking-wide">
+              Nachatra Sharma
+            </h1>
+            <h2 className="text-3xl tracking-wide font-bold">
+              Full Stack Developer
+            </h2>
+            <SocialMedia />
+          </div>
+          <Image
+            src={User}
+            alt="User Profile"
+            width={150}
+            height={150}
+            className="rounded-full"
+          />
+        </div>
         <p className="leading-8 tracking-wide">
           I started my journey in 2023, and today I&apos;m growing as a
           full-stack developer who loves crafting websites that speak true
