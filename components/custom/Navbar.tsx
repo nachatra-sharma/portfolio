@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, MenuItem } from "../ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import { Blocks, BookImage, BookMarked, CircleUser, House } from "lucide-react";
@@ -7,9 +7,19 @@ import { ModeToggle } from "./ThemeToggle";
 import Link from "next/link";
 
 export function NavbarComponent() {
+  const [top, setTop] = useState(true);
+  useEffect(() => {
+    const handleScroll = () => {
+      setTop(window.scrollY === 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <div className="relative w-full flex items-center justify-center">
-      <Navbar className="top-2 my-2" />
+    <div className={`w-full ${top ? "" : "h-16 fixed z-999 backdrop-blur-lg"}`}>
+      <Navbar className="top-0 my-2" />
     </div>
   );
 }

@@ -14,11 +14,13 @@ export const CometCard = ({
   translateDepth = 20,
   className,
   children,
+  padding = "20",
 }: {
   rotateDepth?: number;
   translateDepth?: number;
   className?: string;
   children: React.ReactNode;
+  padding?: string;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -31,29 +33,29 @@ export const CometCard = ({
   const rotateX = useTransform(
     mouseYSpring,
     [-0.5, 0.5],
-    [`-${rotateDepth}deg`, `${rotateDepth}deg`],
+    [`-${rotateDepth}deg`, `${rotateDepth}deg`]
   );
   const rotateY = useTransform(
     mouseXSpring,
     [-0.5, 0.5],
-    [`${rotateDepth}deg`, `-${rotateDepth}deg`],
+    [`${rotateDepth}deg`, `-${rotateDepth}deg`]
   );
 
   const translateX = useTransform(
     mouseXSpring,
     [-0.5, 0.5],
-    [`-${translateDepth}px`, `${translateDepth}px`],
+    [`-${translateDepth}px`, `${translateDepth}px`]
   );
   const translateY = useTransform(
     mouseYSpring,
     [-0.5, 0.5],
-    [`${translateDepth}px`, `-${translateDepth}px`],
+    [`${translateDepth}px`, `-${translateDepth}px`]
   );
 
   const glareX = useTransform(mouseXSpring, [-0.5, 0.5], [0, 100]);
   const glareY = useTransform(mouseYSpring, [-0.5, 0.5], [0, 100]);
 
-  const glareBackground = useMotionTemplate`radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.75) 20%, rgba(255, 255, 255, 0) 80%)`;
+  // const glareBackground = useMotionTemplate`radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.75) 20%, rgba(255, 255, 255, 0) 80%)`;
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
@@ -85,6 +87,7 @@ export const CometCard = ({
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{
+          padding: `0px ${padding}px`,
           rotateX,
           rotateY,
           translateX,
@@ -104,7 +107,7 @@ export const CometCard = ({
         <motion.div
           className="pointer-events-none absolute inset-0 z-50 h-full w-full rounded-[16px] mix-blend-overlay"
           style={{
-            background: glareBackground,
+            // background: glareBackground,
             opacity: 0.6,
           }}
           transition={{ duration: 0.2 }}
