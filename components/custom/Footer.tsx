@@ -3,7 +3,6 @@ import {
   IconBrandInstagram,
   IconBrandLinkedin,
   IconBrandMedium,
-  IconBrandTelegram,
   IconBrandTwitter,
 } from "@tabler/icons-react";
 import { LinkPreview } from "../ui/link-preview";
