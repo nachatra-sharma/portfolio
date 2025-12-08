@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/custom/ThemeProvider";
 import Footer from "@/components/custom/Footer";
 import { Inter } from "next/font/google";
+import { NavbarComponent } from "@/components/custom/Navbar";
 const inter = Inter({
   subsets: ["latin"],
 });
@@ -25,7 +26,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="relative flex w-full flex-col items-start justify-start overflow-hidden">
+            <NavbarComponent />
+            {children}
+          </div>
           <Footer />
         </ThemeProvider>
       </body>

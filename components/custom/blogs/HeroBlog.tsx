@@ -12,11 +12,11 @@ export function HeroBlog() {
       <div className="flex flex-col gap-5 mt-10 md:mt-30">
         <div className="p-4 max-w-7xl  mx-auto relative z-10  w-full pt-10 sm:pt-20 md:pt-0">
           {isMobile ? (
-            <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 to-neutral-950 dark:from-neutral-50 dark:to-neutral-400 bg-opacity-50 leading-10 pb-5">
+            <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-linear-to-b from-neutral-800 to-neutral-950 dark:from-neutral-50 dark:to-neutral-400 bg-opacity-50 leading-10 pb-5">
               What I&apos;m Learning Right Now
             </h1>
           ) : (
-            <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 to-neutral-950 dark:from-neutral-50 dark:to-neutral-400  bg-opacity-50 leading-20">
+            <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-linear-to-b from-neutral-800 to-neutral-950 dark:from-neutral-50 dark:to-neutral-400  bg-opacity-50 leading-20">
               What I&apos;m Learning <br /> <Cover>Right Now</Cover>
             </h1>
           )}
