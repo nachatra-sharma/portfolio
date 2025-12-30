@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { Menu, MenuItem } from "../ui/navbar-menu";
 import { cn } from "@/lib/utils";
-import { Blocks, BookImage, BookMarked, CircleUser } from "lucide-react";
+import { Blocks, BookMarked, CircleUser, Contact } from "lucide-react";
 import { ModeToggle } from "./ThemeToggle";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -33,7 +33,7 @@ function Navbar({ className }: { className?: string }) {
     { href: "/", label: "Me", icon: CircleUser },
     { href: "/work", label: "Work", icon: Blocks },
     { href: "/blogs", label: "Blogs", icon: BookMarked },
-    { href: "/gallery", label: "Gallery", icon: BookImage },
+    { href: "/contact", label: "Contact", icon: Contact },
   ];
 
   return (

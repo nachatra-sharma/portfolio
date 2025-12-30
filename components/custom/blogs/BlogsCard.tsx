@@ -11,6 +11,7 @@ export function BlogsCard() {
           description={item.description}
           header={item.header}
           icon={item.icon}
+          link={item.link}
           className={i === 3 || i === 6 ? "md:col-span-2" : ""}
         />
       ))}

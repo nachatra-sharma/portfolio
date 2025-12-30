@@ -36,6 +36,7 @@ export const blogs = [
       />
     ),
     icon: <IconBrandReact className="h-4 w-4 text-neutral-500" />,
+    link: "https://medium.com/@sharmanachatra/why-do-we-need-to-import-react-3013c09b02c0",
   },
   {
     title: "Why React Needs Immutable State 👀",
@@ -48,6 +49,7 @@ export const blogs = [
       />
     ),
     icon: <IconBrandReact className="h-4 w-4 text-neutral-500" />,
+    link: "https://medium.com/@sharmanachatra/under-the-hood-why-react-needs-immutable-state-cbc71044d7f1",
   },
   {
     title: "Beginners Guide for Git & GitHub",
@@ -57,6 +59,7 @@ export const blogs = [
       <ImageContainer src={GitGithub} alt="Beginners Guide for Git & GitHub" />
     ),
     icon: <IconBrandGit className="h-4 w-4 text-neutral-500" />,
+    link: "https://medium.com/@sharmanachatra/beginners-guide-for-git-github-2063b72df2f5",
   },
   {
     title: "What is Latency and Throughput?",
@@ -69,5 +72,6 @@ export const blogs = [
       />
     ),
     icon: <IconSettingsCode className="h-4 w-4 text-neutral-500" />,
+    link: "https://medium.com/@sharmanachatra/latency-and-throughput-28ba519e6fe7",
   },
 ];
