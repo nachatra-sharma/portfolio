@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { Menu, MenuItem } from "../ui/navbar-menu";
 import { cn } from "@/lib/utils";
-import { Blocks, BookImage, BookMarked, CircleUser, House } from "lucide-react";
+import { Blocks, BookImage, BookMarked, CircleUser } from "lucide-react";
 import { ModeToggle } from "./ThemeToggle";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
