@@ -1,4 +1,9 @@
 import { Button } from "@/components/ui/moving-border";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact | Nachatra Sharma",
+};
 
 export default function Contact() {
   return (
