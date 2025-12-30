@@ -30,8 +30,7 @@ function Navbar({ className }: { className?: string }) {
   const currentRoute = usePathname();
 
   const menuItems = [
-    { href: "/", label: "Home", icon: House },
-    { href: "/about", label: "About", icon: CircleUser },
+    { href: "/", label: "Me", icon: CircleUser },
     { href: "/work", label: "Work", icon: Blocks },
     { href: "/blogs", label: "Blogs", icon: BookMarked },
     { href: "/gallery", label: "Gallery", icon: BookImage },
@@ -40,7 +39,7 @@ function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed top-10 inset-x-0 max-w-[340px] sm:max-w-[600px] mx-auto z-50",
+        "fixed top-10 inset-x-0 max-w-[300px] sm:max-w-[500px] mx-auto z-50",
         className
       )}
     >

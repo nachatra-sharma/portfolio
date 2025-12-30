@@ -12,7 +12,6 @@ import ReactQuery from "@/public/skills/query.svg";
 import React from "@/public/skills/react.svg";
 import TypeScript from "@/public/skills/typescript.svg";
 import Vite from "@/public/skills/vite.svg";
-import Vue from "@/public/skills/vuejs.svg";
 import Webpack from "@/public/skills/webpack.svg";
 import Zod from "@/public/skills/zod.svg";
 import CSS from "@/public/skills/css.svg";
@@ -50,7 +49,6 @@ export const frontendSkills = [
     text: "Next.js",
     imageLight: NextJSLight,
   },
-  { id: 7, image: Vue, alt: "Vue.js", text: "Vue.js", imageLight: Vue },
   {
     id: 8,
     image: TailwindCSS,
