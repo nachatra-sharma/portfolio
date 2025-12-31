@@ -1,3 +1,4 @@
+import { LinkPreview } from "@/components/ui/link-preview";
 import { ExperienceArray } from "@/constant/experience";
 
 export default function Experience() {
@@ -7,9 +8,11 @@ export default function Experience() {
         return (
           <div className="flex flex-col gap-7" key={index}>
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end">
-              <h3 className="font-semibold tracking-wide text-base sm:text-lg">
-                {experience.company}
-              </h3>
+              <LinkPreview url={experience.link}>
+                <h3 className="font-semibold tracking-wide text-base sm:text-lg underline">
+                  {experience.company}
+                </h3>
+              </LinkPreview>
               <div className="flex flex-col items-start sm:items-end">
                 <span className="italic text-sm">{experience.type}</span>
                 <span className="italic text-sm">{experience.date}</span>

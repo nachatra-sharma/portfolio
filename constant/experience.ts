@@ -6,6 +6,7 @@ export const ExperienceArray = [
     list: [
       " Implemented micro-frontend architecture with Webpack 5 Module Federation for scalable web platforms.",
     ],
+    link: "https://algobeat.com/",
   },
   {
     company: "PRNK Info Tech Pvt. Ltd.",
@@ -16,5 +17,6 @@ export const ExperienceArray = [
       "Primarily contributed to a React Native application — Atwatch Agency — which is live on the Google Play Store.",
       " Developed key features such as user authentication, navigation, and screen design, and integrated REST APIs into the application.",
     ],
+    link: "https://algobeat.com/",
   },
 ];
