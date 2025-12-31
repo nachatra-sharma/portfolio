@@ -7,10 +7,10 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <div className="flex items-center h-[90vh] w-screen justify-center">
+    <div className="flex items-center h-[85vh] sm:h-[90vh] w-[90%] mx-auto sm:w-screen justify-center">
       <div className="flex flex-col max-w-xl text-center gap-4">
-        <h2 className="text-6xl">Get In Touch</h2>
-        <p className="text-base leading-8">
+        <h2 className="text-4xl md:text-6xl">Get In Touch</h2>
+        <p className="text-sm md:text-base leading-7 md:leading-8">
           Although I&apos;m currently looking for any new opportunities, my
           inbox is always open. Whether you have a question or just want to say
           hi, I&apos;ll try my best to get back to you!
