@@ -31,10 +31,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative flex w-full flex-col items-start justify-start overflow-hidden">
+          <main className="relative flex w-full flex-col items-start justify-start overflow-hidden">
             <NavbarComponent />
             {children}
-          </div>
+          </main>
           <Footer />
         </ThemeProvider>
         <Analytics />

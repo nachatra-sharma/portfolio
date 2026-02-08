@@ -30,25 +30,36 @@ function Navbar({ className }: { className?: string }) {
   const currentRoute = usePathname();
 
   const menuItems = [
-    { href: "/", label: "Me", icon: CircleUser },
-    { href: "/work", label: "Work", icon: Blocks },
-    { href: "/blogs", label: "Blogs", icon: BookMarked },
-    { href: "/contact", label: "Contact", icon: Contact },
+    { href: "/", label: "Me", icon: CircleUser, arialLabel: "About Me" },
+    { href: "/work", label: "Work", icon: Blocks, arialLabel: "My Work" },
+    {
+      href: "/blogs",
+      label: "Blogs",
+      icon: BookMarked,
+      arialLabel: "My Blogs",
+    },
+    {
+      href: "/contact",
+      label: "Contact",
+      icon: Contact,
+      arialLabel: "Contact Me",
+    },
   ];
 
   return (
     <div
       className={cn(
         "fixed top-10 inset-x-0 max-w-[300px] sm:max-w-[500px] mx-auto z-50",
-        className
+        className,
       )}
     >
       <Menu setActive={setActive}>
-        {menuItems.map(({ href, label, icon: Icon }) => (
+        {menuItems.map(({ href, label, icon: Icon, arialLabel }) => (
           <Link
             key={href}
             href={href}
             className="relative px-2 py-1 rounded-md mr-0"
+            aria-label={arialLabel}
           >
             {currentRoute === href && (
               <motion.div
@@ -68,7 +79,6 @@ function Navbar({ className }: { className?: string }) {
             </div>
           </Link>
         ))}
-
         <ModeToggle />
       </Menu>
     </div>

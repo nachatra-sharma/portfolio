@@ -1,8 +1,17 @@
 "use client";
-import { Spotlight } from "@/components/ui/spotlight-new";
+import dynamic from "next/dynamic";
 import { BlogsCard } from "./BlogsCard";
-import { Cover } from "@/components/ui/cover";
 import { useMobile } from "@/hooks/useMobile";
+
+const Spotlight = dynamic(
+  () => import("@/components/ui/spotlight-new").then((mod) => mod.Spotlight),
+  { ssr: false }
+);
+
+const Cover = dynamic(
+  () => import("@/components/ui/cover").then((mod) => mod.Cover),
+  { ssr: false }
+);
 
 export function HeroBlog() {
   const isMobile = useMobile();
